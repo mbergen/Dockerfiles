@@ -37,6 +37,7 @@ RUN tlmgr install adjustbox \
                   upquote \
                   xecjk \
                   xurl \
-                  zref
+                  zref \
+                  fdsymbol
 
 RUN git clone https://github.com/codimd/cli
