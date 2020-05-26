@@ -39,7 +39,7 @@ RUN tlmgr install adjustbox \
                   xurl \
                   zref \
                   fdsymbol \
-                  pgf\
+                  pgf \
                   pgfplots
 
 RUN git clone https://github.com/codimd/cli
