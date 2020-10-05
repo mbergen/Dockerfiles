@@ -43,4 +43,4 @@ RUN tlmgr install adjustbox \
                   pgfplots
 
 RUN git clone https://github.com/codimd/cli
-ENV PATH="/data/cli/bin/:${PATH}"
+RUN ln -s /data/cli/bin/codimd /usr/bin/codimd
