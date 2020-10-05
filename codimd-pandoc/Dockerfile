@@ -9,6 +9,7 @@ RUN apk add --no-cache bash \
                        wget \
                        jq
 
+RUN tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet
 
 RUN tlmgr install adjustbox \
                   babel-german \
