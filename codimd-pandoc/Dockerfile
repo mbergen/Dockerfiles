@@ -43,7 +43,8 @@ RUN tlmgr install adjustbox \
                   zref \
                   fdsymbol \
                   pgf \
-                  pgfplots
+                  pgfplots \
+                  latexmk
 
 RUN git clone https://github.com/codimd/cli
 RUN ln -s /data/cli/bin/codimd /usr/bin/codimd
