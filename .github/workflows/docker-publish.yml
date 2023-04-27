@@ -54,11 +54,11 @@ jobs:
       - name: Extract Docker metadata
         id: meta
         uses: docker/metadata-action@v4.4.0
-        tags: |
-          # set latest tag for master branch
-          type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'master') }}
         with:
           images: ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ matrix.name }}
+          tags: |
+            # set latest tag for master branch
+            type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'master') }}
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
