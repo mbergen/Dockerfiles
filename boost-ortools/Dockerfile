@@ -11,6 +11,7 @@ RUN apk add --no-cache alpine-sdk linux-headers lsb-release-minimal
 RUN apk add --no-cache boost-dev
 
 #or-tools
+RUN apk add --no-cache zlib-dev protobuf-dev
 RUN curl -Lo or-tools.tar.gz https://github.com/google/or-tools/releases/download/v9.6/or-tools_amd64_alpine-edge_cpp_v9.6.2534.tar.gz \
     && mkdir -p /usr/local/bin/or-tools \
     && tar -xzf or-tools.tar.gz -C /usr/local/bin/or-tools --strip-components=1 \
