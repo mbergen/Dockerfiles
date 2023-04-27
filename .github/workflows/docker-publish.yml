@@ -25,9 +25,11 @@ jobs:
 
     runs-on: ubuntu-latest
     strategy:
-      include:
-        - name: boost-ortools
-        - name: codimd-pandoc
+      fail-fast: false
+      matrix:
+        include:
+          - name: boost-ortools
+          - name: codimd-pandoc
 
     permissions:
       contents: read
