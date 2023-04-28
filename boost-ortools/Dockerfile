@@ -14,7 +14,7 @@ RUN apk add --no-cache boost-dev
 RUN apk add --no-cache zlib-dev protobuf-dev
 RUN git clone https://github.com/google/or-tools.git \
     && cd or-tools \
-    && cmake -S. -Bbuild -G "Ninja" -DCMAKE_BUILD_TYPE=Release -DBUILD_DEPS=ON -DBUILD_SAMPLES=OFF -DBUILD_SAMPLE=OFF -DBUILD_EXSAMPLES=OFF\
+    && cmake -S. -Bbuild -G "Ninja" -DCMAKE_BUILD_TYPE=Release -DBUILD_DEPS=ON -DBUILD_SAMPLES=OFF -DBUILD_EXAMPLES=OFF\
     && cmake --build build --config Release -v \
     && cmake --build build --target install
 RUN rm -rf or-tools
