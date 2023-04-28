@@ -7,6 +7,9 @@ RUN apk add --no-cache bash git build-base curl cmake ninja tar
 RUN apk add --no-cache alpine-sdk linux-headers lsb-release-minimal
 
 # Libraries
+# catch2
+RUN apk add --no-cache catch2
+
 # boost
 RUN apk add --no-cache boost-dev
 
