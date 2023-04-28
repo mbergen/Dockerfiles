@@ -1,4 +1,4 @@
-FROM pandoc/latex:latest
+FROM pandoc/latex:edge
 
 RUN apk add --no-cache bash \
                        coreutils \
