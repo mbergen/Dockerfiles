@@ -12,13 +12,11 @@ RUN apk add --no-cache boost-dev
 
 #or-tools
 RUN apk add --no-cache zlib-dev protobuf-dev
-RUN curl -Lo or-tools.tar.gz https://github.com/google/or-tools/releases/download/v9.6/or-tools_amd64_alpine-edge_cpp_v9.6.2534.tar.gz \
-    && mkdir -p /usr/local/bin/or-tools \
-    && tar -xzf or-tools.tar.gz -C /usr/local/bin/or-tools --strip-components=1 \
-    && ls /usr/local/bin \
-    && cd /usr/local/bin/or-tools \
-    && make test \
-    && cd -
-RUN rm or-tools.tar.gz
+RUN git clone https://github.com/google/or-tools.git \
+    && cd or-tools \
+    && cmake -S. -Bbuild -G "Ninja" -DCMAKE_BUILD_TYPE=Release -DBUILD_DEPS=ON -DBUILD_SAMPLES=OFF -DBUILD_SAMPLE=OFF -DBUILD_EXSAMPLES=OFF\
+    && cmake --build build --config Release -v \
+    && cmake --build build --target install
+RUN rm -rf or-tools
 
 CMD ["bash"]
